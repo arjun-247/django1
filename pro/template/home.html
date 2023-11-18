@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <h1>Hello Welcome</h1>
+    <table>
+        {% for i in d %}
+        <tr>
+            <td>{{i.name}}</td>
+            <td>{{i.age}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br><br>
+    <table>
+        {% for i in f %}
+        <tr>
+            <td>{{ i.emp_id }}</td>
+            <td>{{ i.emp_name }}</td>
+            <td>{{ i.emp_salary }}</td>
+            <td>{{ i.designation }}</td>
+            <td>{{ i.place }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <table>
+        {% for i in s %}
+        <tr>
+            <td>
+            {{i.emp_id}}
+            </td>
+            <td><a href="{% url 'edit' i.pk %}">edit</a></td>
+
+    </tr>
+    {%endfor%}
+    </table>
+    <img src="{% static 'images/1.jpg' %}" alt="" width="250" height="250">
+</body>
+
+</html>
